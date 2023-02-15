@@ -12,7 +12,7 @@ public class Application {
         employeeDao.findAll().forEach(s -> System.out.println(s));
         System.out.println("///////////////////////////////////////////////////////////////////");
         employeeDao.deleted(8);
-        employeeDao.getById(1);
+        System.out.println(employeeDao.getById(1));
 
     }
 }

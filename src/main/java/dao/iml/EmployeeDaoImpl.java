@@ -69,8 +69,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
         Employee employee = new Employee();
         try(Connection connection = ConnectionManager.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(getById)){
-            ResultSet resultSet = preparedStatement.executeQuery();
             preparedStatement.setInt(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
             while (resultSet.next()){
                employee.setName(resultSet.getString("first_name"));
                employee.setLastName(resultSet.getString("last_name"));
